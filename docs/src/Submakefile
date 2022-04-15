@@ -389,7 +389,30 @@ PDF_TARGETS_CN := $(addprefix $(DOC_DIR)/, \
 	LinuxCNC_Getting_Started_cn.pdf \
 	)
 
-PDF_TARGETS := $(PDF_TARGETS_EN) $(PDF_TARGETS_FR) $(PDF_TARGETS_ES) $(PDF_TARGETS_CN)
+PDF_TARGETS_JA := $(addprefix $(DOC_DIR)/, \
+	LinuxCNC_Documentation_ja.pdf \
+	man_ja/5Axisgui(1)_LinuxCNC_Manual_Pages_ja.pdf \
+	man_ja/AT_PID(9)_LinuxCNC_Manual_Pages_ja.pdf \
+	man_ja/AXIS(1)_LinuxCNC_Manual_Pages_ja.pdf \
+	man_ja/axis-remote(1)_LinuxCNC_Manual_Pages_ja.pdf \
+	man_ja/DEBUGLEVEL(1)_LinuxCNC_Manual_Pages_ja.pdf \
+	man_ja/ENCODER(9)_LinuxCNC_Manual_Pages_ja.pdf \
+	man_ja/GLADEVCP_DEMO(1)_LinuxCNC_Manual_Pages_ja.pdf \
+	man_ja/GMOCCAPY(1)_LinuxCNC_Manual_Pages_ja.pdf \
+	man_ja/GREMLIN_VIEW(1)_LinuxCNC_Manual_Pages_ja.pdf \
+	man_ja/gs2_vfd(1)_LinuxCNC_Manual_Pages_ja.pdf \
+	man_ja/GSCREEN(1)_LinuxCNC_Manual_Pages_ja.pdf \
+	man_ja/HALUI(1)_LinuxCNC_Manual_Pages_ja.pdf \
+	man_ja/IOCONTROL(1)_LinuxCNC_Manual_Pages_ja.pdf \
+	man_ja/LinuxCNC(1)_LinuxCNC_Manual_Pages_ja.pdf \
+	man_ja/MILLTASK(1)_LinuxCNC_Manual_Pages_ja.pdf \
+	man_ja/MOTION(9)_LinuxCNC_Manual_Pages_ja.pdf \
+	man_ja/PID(9)_LinuxCNC_Manual_Pages_ja.pdf \
+	man_ja/SPINDLE(9)_LinuxCNC_Manual_Pages_ja.pdf \
+	)
+
+PDF_TARGETS := $(PDF_TARGETS_EN) $(PDF_TARGETS_FR) $(PDF_TARGETS_ES) \
+	$(PDF_TARGETS_CN) $(PDF_TARGETS_JA)
 
 # It's better to keep the above on separate lines for troubleshooting by swapping
 
@@ -482,6 +505,26 @@ $(DOC_DIR)/LinuxCNC_Getting_Started_es.pdf: $(DOC_SRCDIR)/Master_Getting_Started
 # Chinese PDFs do not build. They can be persuaded to build by using xetex
 # as the a2x backend. See line 403 but even then all characters display as boxes
 $(DOC_DIR)/LinuxCNC_Getting_Started_cn.pdf:
+# Japanese PDFs also do not build.
+$(DOC_DIR)/LinuxCNC_Documentation_ja.pdf:
+$(DOC_DIR)/man_ja/5Axisgui(1)_LinuxCNC_Manual_Pages_ja.pdf:
+$(DOC_DIR)/man_ja/AT_PID(9)_LinuxCNC_Manual_Pages_ja.pdf:
+$(DOC_DIR)/man_ja/AXIS(1)_LinuxCNC_Manual_Pages_ja.pdf:
+$(DOC_DIR)/man_ja/axis-remote(1)_LinuxCNC_Manual_Pages_ja.pdf:
+$(DOC_DIR)/man_ja/DEBUGLEVEL(1)_LinuxCNC_Manual_Pages_ja.pdf:
+$(DOC_DIR)/man_ja/ENCODER(9)_LinuxCNC_Manual_Pages_ja.pdf:
+$(DOC_DIR)/man_ja/GLADEVCP_DEMO(1)_LinuxCNC_Manual_Pages_ja.pdf:
+$(DOC_DIR)/man_ja/GMOCCAPY(1)_LinuxCNC_Manual_Pages_ja.pdf:
+$(DOC_DIR)/man_ja/GREMLIN_VIEW(1)_LinuxCNC_Manual_Pages_ja.pdf:
+$(DOC_DIR)/man_ja/gs2_vfd(1)_LinuxCNC_Manual_Pages_ja.pdf:
+$(DOC_DIR)/man_ja/GSCREEN(1)_LinuxCNC_Manual_Pages_ja.pdf:
+$(DOC_DIR)/man_ja/HALUI(1)_LinuxCNC_Manual_Pages_ja.pdf:
+$(DOC_DIR)/man_ja/IOCONTROL(1)_LinuxCNC_Manual_Pages_ja.pdf:
+$(DOC_DIR)/man_ja/LinuxCNC(1)_LinuxCNC_Manual_Pages_ja.pdf:
+$(DOC_DIR)/man_ja/MILLTASK(1)_LinuxCNC_Manual_Pages_ja.pdf:
+$(DOC_DIR)/man_ja/MOTION(9)_LinuxCNC_Manual_Pages_ja.pdf:
+$(DOC_DIR)/man_ja/PID(9)_LinuxCNC_Manual_Pages_ja.pdf:
+$(DOC_DIR)/man_ja/SPINDLE(9)_LinuxCNC_Manual_Pages_ja.pdf:
 
 $(DOC_DIR)/LinuxCNC_Getting_Started_fr.pdf: $(DOC_SRCDIR)/Master_Getting_Started_fr.pdf
 	@ln -f $< $@
